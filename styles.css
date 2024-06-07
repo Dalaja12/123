@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #2C3E50 0%, #4CA1AF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-image {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+.image-text {
+    color: #fff;
+    font-size: 1rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+.container {
+    background-color: #2C3E50;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+    overflow-y: auto;
+    max-height: 90vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.5s ease-in-out;
+    position: relative;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    color: #2C3E50;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+input:focus, select:focus {
+    border-color: #4CA1AF;
+    box-shadow: 0 0 5px rgba(76, 161, 175, 0.5);
+}
+
+input::placeholder, select::placeholder {
+    color: #888;
+}
+
+button {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CA1AF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    animation: bounceIn 1s ease-in-out;
+}
+
+button:hover {
+    background-color: #2C3E50;
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #4CA1AF;
+    box-shadow: 0 0 5px rgba(76, 161, 175, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Iconos */
+.form-group i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #888;
+}
+
+/* Ajuste de iconos para dispositivos móviles */
+@media (max-width: 600px) {
+    .form-group i {
+        position: relative;
+        top: initial;
+        transform: initial;
+        left: initial;
+        margin-right: 10px; /* Agrega un margen derecho para separar los iconos de los campos de entrada en dispositivos móviles */
+    }
+}
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #4CA1AF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: none;
+}
+
+.select-selected:hover {
+    background-color: #2C3E50;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #4CA1AF;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.select-items div {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.select-items div:hover {
+    background-color: #2C3E50;
+}
+
+
+/* Estilos para imágenes responsivas */
+.images-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos para la ventana emergente */
+/* Estilos para la ventana emergente */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8); /* Cambiado a un color oscuro */
+}
+
+.modal-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 80%;
+    width: 350px;
+    max-height: 80%;
+    overflow-y: auto;
+    color: #2C3E50; /* Color de texto cambiado a oscuro */
+    text-align: center; /* Alineación de texto centrado */
+}
+
+.modal-content img {
+    max-width: 89%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Agrega tus estilos CSS existentes aquí */
+
+/* Oculta el enlace de descarga */
+#download-link {
+    display: none;
+}
+
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content p {
+    color: #000; /* Color de texto negro */
+}
+
+.modal-content img {
+    max-width: 89%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Media queries para la ventana emergente */
+@media (max-width: 600px) {
+    .modal-content {
+        max-width: 95%;
+        width: 90%;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

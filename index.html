@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscríbete Ahora</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            overflow: hidden;
+            position: relative;
+            color: #ecf0f1;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            z-index: 2;
+            animation: logoAnimation 2s ease infinite alternate;
+        }
+        @keyframes logoAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            z-index: 2;
+            position: relative;
+            backdrop-filter: blur(10px);
+            animation: containerAnimation 2s ease infinite alternate;
+        }
+        @keyframes containerAnimation {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+        .container img.main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: imageAnimation 4s ease infinite alternate;
+        }
+        @keyframes imageAnimation {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #ecf0f1;
+            font-weight: 600;
+            animation: fadeIn 2s ease;
+        }
+        .container p {
+            font-size: 1.2em;
+            color: #bdc3c7;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease 1s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .btn {
+            background-color: #8e44ad; /* Color morado */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            animation: fadeIn 2s ease 2s forwards;
+            opacity: 0;
+        }
+        .btn i {
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #732d91;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+        }
+        .btn:active {
+            background-color: #5e3370;
+            transform: translateY(1px);
+        }
+        .corner-image {
+            position: fixed;
+            bottom: 20px;
+            width: 200px; /* Aumenta el tamaño de la imagen */
+            height: auto;
+            opacity: 0; /* Inicialmente invisible */
+            transform: translateY(20px); /* Desplazamiento inicial */
+            animation: fadeInUp 2s ease forwards; /* Animación de aparición */
+            border-radius: 20px; /* Bordes redondeados */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para darle un mejor efecto */
+        }
+        .corner-image-right {
+            right: 20px;
+        }
+        .corner-image-left {
+            left: 20px;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .corner-image:hover,
+        .corner-image:focus {
+            opacity: 1;
+            transform: scale(1.1); /* Añadir escalado en hover */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            .container h1 {
+                font-size: 2em;
+            }
+            .container p {
+                font-size: 1em;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            .logo {
+                width: 60px;
+            }
+            .corner-image {
+                width: 150px; /* Ajustar tamaño de la imagen en pantallas pequeñas */
+            }
+            @media (max-width: 768px) {
+    .container {
+        padding: 5%; /* Ajusta el relleno para pantallas pequeñas */
+    }
+    .container h1 {
+        font-size: 1.5em; /* Reduce el tamaño del título */
+    }
+    .container p {
+        font-size: 0.8em; /* Reduce el tamaño del texto */
+    }
+    .btn {
+        padding: 8px 16px; /* Reduce el padding del botón */
+        font-size: 0.8em; /* Reduce el tamaño del texto del botón */
+    }
+    .logo {
+        width: 40px; /* Reduce el tamaño del logo */
+    }
+    .corner-image {
+        width: 20%; /* Reduce el tamaño de la ventana flotante */
+        bottom: 5px;
+        max-width: 80px; /* Limita el tamaño máximo de la ventana flotante */
+    }
+    .corner-image img {
+        max-width: 100%; /* Ajusta el tamaño máximo de la imagen de la ventana flotante */
+    }
+}
+
+        }
+
+    </style>
+</head>
+<body>
+    <img src="Recursos/uttlogo.png" alt="Logo" class="logo">
+    <div class="container">
+        <img src="Recursos/1.png" alt="Imagen de bienvenida" class="main-image">
+        <h1>Bienvenido a Nuestra Universidad</h1>
+        <p>¡Descubre nuestras excelentes oportunidades académicas!</p>
+        <a href="Formulario.html" class="btn"><i class="fas fa-pencil-alt"></i> Inscríbete Ahora</a>
+    </div>
+    <img src="Recursos/img.png" alt="Ejemplo" class="corner-image corner-image-right">
+    <img src="Recursos/img2.png" alt="Ejemplo" class="corner-image corner-image-left">
+</body>
+</html>
+
+
